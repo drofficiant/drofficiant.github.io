@@ -1,0 +1,16 @@
+title: "DR Officiant"
+description: "Humanist wedding ceremonies and practical wedding information for Southwestern Ontario."
+url: "https://drofficiant.github.io"
+baseurl: ""
+author:
+  name: "DR Officiant"
+permalink: pretty
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - node_modules/
