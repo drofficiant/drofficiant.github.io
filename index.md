@@ -1,10 +1,102 @@
 ---
 layout: default
-title: "Humanist Wedding Ceremonies in Southwestern Ontario"
-description: "A future home for humanist wedding ceremonies and practical wedding information for couples in Woodstock, Oxford County, London, Guelph and surrounding communities."
+title: Wedding Resources for Southwestern Ontario
+description: Wedding tips, crafts, ceremony guides, vow-writing exercises and local venue resources for couples in Southwestern Ontario.
 ---
-<section class="hero"><div class="container hero-grid"><div class="hero-copy"><p class="eyebrow">Humanist wedding ceremonies</p><h1>Your guide to getting married in Southwestern Ontario.</h1><p>Practical information, local resources and, eventually, humanist wedding ceremonies for couples across Woodstock, Oxford County, London, Guelph and surrounding communities.</p><div class="hero-actions"><a class="button" href="{{ '/guides/' | relative_url }}">Explore the wedding guide</a><a class="button button-secondary" href="{{ '/weddings/' | relative_url }}">About ceremonies</a></div></div><div class="hero-art" aria-label="Placeholder for a future local wedding photograph"><div><strong>PHOTO PLACEHOLDER</strong><p>Add your own local photography here later. A real local image will make the site feel much more personal.</p></div></div></div></section>
-<section class="feature-strip"><div class="container feature-grid"><div class="feature"><span class="feature-icon">♡</span><strong>Personalized ceremonies</strong><span>Built around the couple</span></div><div class="feature"><span class="feature-icon">✦</span><strong>Humanist &amp; non-religious</strong><span>Meaningful without assumptions</span></div><div class="feature"><span class="feature-icon">▣</span><strong>Practical information</strong><span>Clear answers to wedding questions</span></div><div class="feature"><span class="feature-icon">⌖</span><strong>Southwestern Ontario</strong><span>Local guides and resources</span></div></div></section>
-<section class="content-section"><div class="container"><div class="section-heading"><div><p class="eyebrow">Start planning</p><h2>Explore the wedding guide.</h2></div><p>This section will become the information hub of the site, with practical guides for couples planning weddings in Ontario and local resources for Southwestern Ontario.</p></div><div class="card-grid"><article class="card"><div class="card-placeholder">Guide</div><div class="card-body"><h3>Getting a marriage licence</h3><p>A practical guide to what couples need to know before getting married in Ontario.</p><a class="card-link" href="{{ '/guides/' | relative_url }}">READ THE GUIDES →</a></div></article><article class="card"><div class="card-placeholder">Local guide</div><div class="card-body"><h3>Weddings in Woodstock</h3><p>Local information about getting married in Woodstock and Oxford County.</p><a class="card-link" href="{{ '/locations/' | relative_url }}">EXPLORE LOCAL AREAS →</a></div></article><article class="card"><div class="card-placeholder">Planning</div><div class="card-body"><h3>Writing your wedding vows</h3><p>Ideas and practical advice for couples who want their ceremony to sound like them.</p><a class="card-link" href="{{ '/guides/' | relative_url }}">READ THE GUIDES →</a></div></article></div></div></section>
-<section class="content-section soft-section"><div class="container"><div class="section-heading"><div><p class="eyebrow">Local information</p><h2>Find wedding information for your area.</h2></div><p>The local section will grow over time. Each area can eventually have its own practical guides, venue information and wedding-planning resources.</p></div><div class="card-grid"><article class="card"><div class="card-body"><h3>Woodstock &amp; Oxford County</h3><p>Start here for the local area at the centre of the business.</p><a class="card-link" href="{{ '/locations/' | relative_url }}">VIEW LOCAL GUIDES →</a></div></article><article class="card"><div class="card-body"><h3>London &amp; St. Thomas</h3><p>Future guides for couples planning weddings in the London area.</p><a class="card-link" href="{{ '/locations/' | relative_url }}">VIEW LOCAL GUIDES →</a></div></article><article class="card"><div class="card-body"><h3>Guelph &amp; Waterloo Region</h3><p>Future guides for couples planning weddings farther east.</p><a class="card-link" href="{{ '/locations/' | relative_url }}">VIEW LOCAL GUIDES →</a></div></article></div></div></section>
-<section class="content-section"><div class="container narrow"><div class="callout"><p class="eyebrow">About the project</p><h2>A useful local resource first.</h2><p>This site is being built as a practical resource for people planning weddings in Southwestern Ontario. The goal is to make complicated information easier to understand and to connect couples with useful local resources.</p><a class="button" href="{{ '/about/' | relative_url }}">Read about the officiant</a></div></div></section>
+
+<div class="home-page">
+
+  <section class="home-hero">
+    <div class="hero-copy">
+      <p class="eyebrow">YOUR SOUTHWESTERN ONTARIO WEDDING RESOURCE</p>
+      <h1>Your wedding. Your values. Your way.</h1>
+      <p class="hero-description">
+        Practical advice, creative ideas and thoughtful resources to help you
+        plan a celebration that feels like you.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="#resources">Explore the resources</a>
+        <a class="button button-outline" href="{{ '/locations/' | relative_url }}">Explore local venues</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img
+        src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=85"
+        alt="Wedding ceremony setting decorated with flowers">
+    </div>
+  </section>
+
+  <section class="resources-section" id="resources">
+    <div class="section-heading">
+      <p class="eyebrow">EXPLORE THE RESOURCES</p>
+      <h2>Plan a meaningful celebration, your way.</h2>
+      <p>Browse practical guides, creative projects and local information to help you make decisions at your own pace.</p>
+    </div>
+
+    <div class="resource-grid">
+
+      <article class="resource-card">
+        <a class="resource-image" href="{{ '/wedding-tips/' | relative_url }}">
+          <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80" alt="Notebook and pen for wedding planning" loading="lazy">
+        </a>
+        <div class="resource-card-content">
+          <h3><a href="{{ '/wedding-tips/' | relative_url }}">Wedding Tips</a></h3>
+          <p>Planning advice, timelines, checklists and answers to common wedding questions.</p>
+          <a class="text-link" href="{{ '/wedding-tips/' | relative_url }}">Explore tips →</a>
+        </div>
+      </article>
+
+      <article class="resource-card">
+        <a class="resource-image" href="{{ '/wedding-crafts/' | relative_url }}">
+          <img src="https://images.unsplash.com/photo-1519225421980-888cbf7b4a13?auto=format&fit=crop&w=800&q=80" alt="Wedding details and decorative touches" loading="lazy">
+        </a>
+        <div class="resource-card-content">
+          <h3><a href="{{ '/wedding-crafts/' | relative_url }}">Wedding Crafts</a></h3>
+          <p>DIY projects, handmade decorations, printable ideas and personal touches.</p>
+          <a class="text-link" href="{{ '/wedding-crafts/' | relative_url }}">Explore crafts →</a>
+        </div>
+      </article>
+
+      <article class="resource-card">
+        <a class="resource-image" href="{{ '/ceremony-guides/' | relative_url }}">
+          <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Event space prepared for a gathering" loading="lazy">
+        </a>
+        <div class="resource-card-content">
+          <h3><a href="{{ '/ceremony-guides/' | relative_url }}">Ceremony Guides</a></h3>
+          <p>Understand ceremony structures, readings, rituals and ways to make a ceremony personal.</p>
+          <a class="text-link" href="{{ '/ceremony-guides/' | relative_url }}">Explore guides →</a>
+        </div>
+      </article>
+
+      <article class="resource-card">
+        <a class="resource-image" href="{{ '/vow-workshop/' | relative_url }}">
+          <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80" alt="Writing materials for developing personal wedding vows" loading="lazy">
+        </a>
+        <div class="resource-card-content">
+          <h3><a href="{{ '/vow-workshop/' | relative_url }}">Vow Workshop</a></h3>
+          <p>Questions, prompts and exercises to help you write vows in your own words.</p>
+          <a class="text-link" href="{{ '/vow-workshop/' | relative_url }}">Start writing →</a>
+        </div>
+      </article>
+
+      <article class="resource-card">
+        <a class="resource-image" href="{{ '/locations/' | relative_url }}">
+          <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80" alt="Wedding reception venue set up for a celebration" loading="lazy">
+        </a>
+        <div class="resource-card-content">
+          <h3><a href="{{ '/locations/' | relative_url }}">Venues per Area</a></h3>
+          <p>Discover venue options and local planning resources around Woodstock, Oxford County, London and Guelph.</p>
+          <a class="text-link" href="{{ '/locations/' | relative_url }}">Explore local areas →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="home-note">
+    <p class="eyebrow">A RESOURCE FOR EVERY COUPLE</p>
+    <h2>Start with what matters to you.</h2>
+    <p>You don't need to have every detail figured out. Use these resources to explore ideas, compare options and build a celebration that reflects your relationship.</p>
+  </section>
+
+</div>
