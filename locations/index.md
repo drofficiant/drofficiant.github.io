@@ -1,28 +1,32 @@
 ---
 layout: page
-title: Areas Served
-description: Wedding officiant information for Woodstock, Oxford County, and surrounding Southwestern Ontario communities.
+title: Venues per Area
+description: Explore wedding venues and local wedding planning resources in Woodstock, Oxford County, London, Guelph and surrounding Southwestern Ontario communities.
 permalink: /locations/
 ---
 
-# Areas Served
+# Wedding Venues by Area
 
-I plan to serve couples in Woodstock and surrounding communities across Southwestern Ontario.
+Finding a venue starts with understanding what is available in the places you are considering. This section will organize venue information and local wedding resources by area.
+
+Venue details, capacity, prices and availability can change. Check directly with each venue before making a booking.
 
 ## Woodstock and Oxford County
 
-Information for couples planning a wedding in Woodstock, Ingersoll, Tillsonburg, and other Oxford County communities.
+Explore wedding venue options and local resources in Woodstock, Ingersoll, Tillsonburg and surrounding communities.
 
-## London and surrounding communities
+## London and surrounding areas
 
-Resources for couples planning ceremonies in London and nearby communities.
+Discover venue options and wedding planning resources in London and nearby communities.
 
-## Kitchener-Waterloo and Guelph
+## Guelph and surrounding areas
 
-Information for couples considering a ceremony in the Kitchener-Waterloo or Guelph areas.
+Explore wedding venues and local resources in Guelph and surrounding communities.
 
-## Planning your ceremony locally
+## Kitchener-Waterloo and surrounding areas
 
-Your location can affect travel arrangements, venue coordination, and ceremony logistics. More detailed local guides will be added as the website develops.
+Find venue information and planning resources for couples considering the Kitchener-Waterloo area.
 
-*Service availability and travel arrangements will be confirmed directly with each couple.*
+## More Southwestern Ontario locations
+
+Additional areas and venue guides will be added as the resource grows.
