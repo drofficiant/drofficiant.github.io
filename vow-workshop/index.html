@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A guided wedding vow-writing workbook that helps you write your own vows.">
+  <title>Write Your Vows | A Guided Writing Workbook</title>
+  <style>
+    /* ---------------------------------------------------------
+       BASE DESIGN
+       All styling is contained in this file so it can be hosted
+       directly on GitHub Pages without dependencies.
+    --------------------------------------------------------- */
+    :root {
+      --ink: #292923;
+      --muted: #706f66;
+      --paper: #fbfaf7;
+      --card: #ffffff;
+      --line: #e6e2d9;
+      --sage: #657b68;
+      --sage-dark: #4d6250;
+      --sage-light: #edf2ec;
+      --sand: #f2eee6;
+      --rose: #f4e9e5;
+      --shadow: 0 10px 30px rgba(44, 43, 35, 0.06);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+    }
+
+    button, input, textarea { font: inherit; }
+
+    button { cursor: pointer; }
+
+    .site-header {
+      padding: 22px 5vw;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      background: rgba(251, 250, 247, 0.95);
+    }
+
+    .brand {
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .header-note {
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 0.8rem;
+    }
+
+    main {
+      width: min(980px, 92%);
+      margin: 0 auto;
+      padding: 54px 0 90px;
+    }
+
+    .eyebrow {
+      color: var(--sage-dark);
+      font-family: Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 14px;
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.06;
+    }
+
+    h2 {
+      margin-bottom: 12px;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 1.25rem;
+      font-weight: 400;
+    }
+
+    .lead {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+
+    .progress-wrap {
+      margin: 34px 0 42px;
+      font-family: Arial, sans-serif;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 9px;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .progress-track {
+      height: 6px;
+      overflow: hidden;
+      border-radius: 99px;
+      background: #e9e6de;
+    }
+
+    .progress-fill {
+      width: 0;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--sage);
+      transition: width 220ms ease;
+    }
+
+    .screen { display: none; }
+    .screen.active { display: block; }
+
+    .style-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 30px 0 22px;
+    }
+
+    .style-card {
+      position: relative;
+      display: block;
+      min-height: 205px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      transition: border-color 150ms ease, transform 150ms ease;
+    }
+
+    .style-card:hover { transform: translateY(-2px); }
+    .style-card.selected {
+      border: 2px solid var(--sage);
+      padding: 21px;
+      background: var(--sage-light);
+    }
+
+    .style-card input {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 19px;
+      height: 19px;
+      accent-color: var(--sage);
+    }
+
+    .style-icon { font-size: 1.6rem; }
+    .style-card h3 { margin: 8px 28px 6px 0; }
+    .style-description {
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+    }
+
+    details {
+      margin-top: 12px;
+      font-family: Arial, sans-serif;
+      font-size: 0.86rem;
+    }
+
+    summary {
+      color: var(--sage-dark);
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .example {
+      margin-top: 10px;
+      padding: 12px;
+      border-left: 3px solid #b8c5b6;
+      background: rgba(255,255,255,0.7);
+      color: #55564f;
+      font-family: Georgia, serif;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .notice {
+      margin: 24px 0;
+      padding: 18px 20px;
+      border-radius: 12px;
+      background: var(--sand);
+      color: #5f5b51;
+      font-size: 0.95rem;
+    }
+
+    .question-list { margin-top: 28px; }
+
+    .question-card {
+      margin: 0 0 18px;
+      padding: 23px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--card);
+    }
+
+    .question-card label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .question-help {
+      margin-bottom: 13px;
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 0.88rem;
+    }
+
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #d9d5cb;
+      border-radius: 9px;
+      outline: none;
+      background: #fff;
+      color: var(--ink);
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    textarea { min-height: 105px; resize: vertical; }
+    textarea:focus, input[type="text"]:focus {
+      border-color: var(--sage);
+      box-shadow: 0 0 0 3px rgba(101, 123, 104, 0.12);
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      padding: 12px 22px;
+      border: 1px solid var(--sage);
+      border-radius: 999px;
+      background: var(--sage);
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .button:hover { background: var(--sage-dark); }
+    .button.secondary {
+      background: transparent;
+      color: var(--sage-dark);
+    }
+    .button.secondary:hover { background: var(--sage-light); }
+    .button:disabled { opacity: 0.45; cursor: not-allowed; }
+
+    .guide-intro {
+      margin: 22px 0 30px;
+      padding: 22px;
+      border-radius: var(--radius);
+      background: var(--sage-light);
+    }
+
+    .guide-section {
+      margin: 24px 0;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      break-inside: avoid;
+    }
+
+    .section-number {
+      color: var(--sage-dark);
+      font-family: Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .your-answer {
+      margin: 14px 0;
+      padding: 15px 17px;
+      border-left: 3px solid #b8c5b6;
+      background: #f7f6f2;
+      white-space: pre-wrap;
+    }
+
+    .your-answer.empty {
+      color: #8a887f;
+      font-style: italic;
+    }
+
+    .prompt-list {
+      margin: 10px 0 18px;
+      padding-left: 22px;
+      color: #57574f;
+    }
+
+    .starter-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0 18px;
+    }
+
+    .starter {
+      padding: 7px 11px;
+      border-radius: 99px;
+      background: var(--rose);
+      color: #765c55;
+      font-size: 0.88rem;
+    }
+
+    .writing-space {
+      min-height: 120px;
+      margin-top: 10px;
+      padding: 14px;
+      border: 1px dashed #c9c4b8;
+      border-radius: 10px;
+      color: #99958b;
+      font-family: Arial, sans-serif;
+      font-size: 0.88rem;
+    }
+
+    .footer-note {
+      margin-top: 35px;
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    .hidden { display: none !important; }
+
+    @media (max-width: 650px) {
+      main { padding-top: 38px; }
+      .style-grid { grid-template-columns: 1fr; }
+      .style-card { min-height: 0; }
+      .site-header { align-items: flex-start; flex-direction: column; }
+      .guide-section { padding: 20px; }
+      .question-card { padding: 18px; }
+    }
+
+    @media print {
+      body { background: white; }
+      .site-header, .progress-wrap, .button-row, .footer-note,
+      #screen-styles, #screen-questions { display: none !important; }
+      main { width: 100%; padding: 0; }
+      #screen-guide { display: block !important; }
+      .guide-section { box-shadow: none; }
+      .writing-space { min-height: 95px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">A Guide to Writing Your Vows</div>
+    <div class="header-note">A little help finding your own words</div>
+  </header>
+
+  <main>
+    <div class="eyebrow">Your wedding, your words</div>
+    <h1>Let's write vows that sound like you.</h1>
+    <p class="lead">This guided workbook will help you collect memories, identify what matters, and find a structure for writing your own vows. It will not write the vows for you.</p>
+
+    <div class="progress-wrap">
+      <div class="progress-meta">
+        <span id="progress-label">Step 1 of 3</span>
+        <span id="progress-percent">0% complete</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    </div>
+
+    <!-- STEP 1: Style selection. Users may select more than one style. -->
+    <section class="screen active" id="screen-styles">
+      <div class="eyebrow">Step 1</div>
+      <h2>What kind of vows feel like you?</h2>
+      <p class="lead">Choose one or more directions. You can combine styles, and you can change your choices later.</p>
+
+      <div class="style-grid" id="style-grid">
+        <label class="style-card">
+          <input type="checkbox" name="style" value="heartfelt">
+          <div class="style-icon">❤️</div>
+          <h3>Heartfelt</h3>
+          <div class="style-description">I want to tell them what they mean to me.</div>
+          <details>
+            <summary>Read an example</summary>
+            <div class="example">"You have become my best friend, my safe place, and the person I want beside me through all of it. I love the big things about you, but I also love the ordinary moments we share. I promise to keep choosing you, to listen, to support you, and to never take for granted the life we are building together."</div>
+          </details>
+        </label>
+
+        <label class="style-card">
+          <input type="checkbox" name="style" value="story">
+          <div class="style-icon">📖</div>
+          <h3>Our Story</h3>
+          <div class="style-description">I want my vows to tell the story of us.</div>
+          <details>
+            <summary>Read an example</summary>
+            <div class="example">"When we first met, I had no idea that the person standing in front of me would become the person I wanted beside me for the rest of my life. I think about our first conversations, the memories we've collected, and all the little moments that brought us here. Today is not the end of our story. It is another chapter, and I cannot wait to see what happens next."</div>
+          </details>
+        </label>
+
+        <label class="style-card">
+          <input type="checkbox" name="style" value="funny">
+          <div class="style-icon">😂</div>
+          <h3>Funny &amp; Playful</h3>
+          <div class="style-description">I want them to laugh, but I still want it to be meaningful.</div>
+          <details>
+            <summary>Read an example</summary>
+            <div class="example">"I promise to accept that 'five more minutes' rarely means five minutes. I promise to share my food, even when you said you weren't hungry, and to keep laughing with you when life gets ridiculous. Most importantly, I promise that the person who makes me laugh the hardest will always be the person I trust the most."</div>
+          </details>
+        </label>
+
+        <label class="style-card">
+          <input type="checkbox" name="style" value="simple">
+          <div class="style-icon">🌿</div>
+          <h3>Simple &amp; Sincere</h3>
+          <div class="style-description">I want something beautiful without making it complicated.</div>
+          <details>
+            <summary>Read an example</summary>
+            <div class="example">"I love you, and I love the life we have together. I promise to be honest with you, to support you, and to keep making time for us. I know we cannot predict everything that lies ahead, but I know I want to face it with you."</div>
+          </details>
+        </label>
+
+        <label class="style-card">
+          <input type="checkbox" name="style" value="poetic">
+          <div class="style-icon">✨</div>
+          <h3>Romantic &amp; Poetic</h3>
+          <div class="style-description">I want my vows to feel expressive, romantic, and emotional.</div>
+          <details>
+            <summary>Read an example</summary>
+            <div class="example">"You are the person I look for in a crowded room, the hand I reach for without thinking, and the person I want beside me in every season. I promise to keep discovering you, to notice the small things, and to build a home with you wherever life takes us."</div>
+          </details>
+        </label>
+
+        <label class="style-card">
+          <input type="checkbox" name="style" value="partnership">
+          <div class="style-icon">🤝</div>
+          <h3>Partnership &amp; Future</h3>
+          <div class="style-description">I want to focus on the life we're building together.</div>
+          <details>
+            <summary>Read an example</summary>
+            <div class="example">"I don't know exactly what our life will look like ten or twenty years from now, but I know I want to build it with you. I promise to make decisions with you, to support your dreams, and to remember that we're on the same team. Whatever comes next, we'll figure it out together."</div>
+          </details>
+        </label>
+
+        <label class="style-card">
+          <input type="checkbox" name="style" value="faith">
+          <div class="style-icon">🕊️</div>
+          <h3>Faith &amp; Tradition</h3>
+          <div class="style-description">I want my faith, beliefs, or traditions to be part of my vows.</div>
+          <details>
+            <summary>Read an example</summary>
+            <div class="example">"Today, surrounded by the people who have shaped our lives, I promise to build our marriage on the values that matter most to us. I promise to approach our life together with patience, humility, faith, and love, and to honor the commitments we make today."</div>
+          </details>
+        </label>
+
+        <label class="style-card">
+          <input type="checkbox" name="style" value="template">
+          <div class="style-icon">📝</div>
+          <h3>Give Me a Template</h3>
+          <div class="style-description">I would rather have a clear structure to follow than choose a particular style.</div>
+          <details>
+            <summary>What does this mean?</summary>
+            <div class="example">You'll receive a straightforward outline with sections, questions to consider, and places to write. You will still answer the core questions so the guide can remind you of your own ideas.</div>
+          </details>
+        </label>
+      </div>
+
+      <div class="notice">You do not need to know exactly what you want to say yet. These choices simply help us decide which questions and writing exercises to include.</div>
+      <div class="button-row">
+        <span></span>
+        <button class="button" id="to-questions">Continue to the questions →</button>
+      </div>
+    </section>
+
+    <!-- STEP 2: Common questions plus questions selected by style. -->
+    <section class="screen" id="screen-questions">
+      <div class="eyebrow">Step 2</div>
+      <h2>Tell us about the two of you.</h2>
+      <p class="lead">Answer in whatever way feels natural. Bullet points, fragments, and messy notes are welcome. These answers are your raw material, not your vows.</p>
+      <div class="notice">Your answers will appear in your final writing guide as reminders and starting points. You can leave any question blank.</div>
+      <div id="question-list" class="question-list"></div>
+      <div class="button-row">
+        <button class="button secondary" id="back-to-styles">← Back to styles</button>
+        <button class="button" id="make-guide">Build my writing guide →</button>
+      </div>
+    </section>
+
+    <!-- STEP 3: The output is a personalized workbook, not completed vows. -->
+    <section class="screen" id="screen-guide">
+      <div class="eyebrow">Step 3</div>
+      <h2>Your personal vow-writing guide</h2>
+      <p class="lead">This is a path for writing your vows, not a finished set of vows. Your answers are included to help you remember what you want to say.</p>
+      <div class="guide-intro" id="guide-intro"></div>
+      <div id="guide-content"></div>
+      <div class="notice"><strong>Remember:</strong> Your answers are not your vows. Use them to find the stories, feelings, and promises you want to express. Write in your own voice. Your first draft does not need to be perfect.</div>
+      <div class="button-row">
+        <button class="button secondary" id="edit-answers">← Edit my answers</button>
+        <div>
+          <button class="button secondary" id="start-over">Start over</button>
+          <button class="button" id="print-guide">Print / Save as PDF</button>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer-note">Your answers are saved in this browser on this device. They are not sent to a server.</p>
+  </main>
+
+  <script>
+    /* ---------------------------------------------------------
+       DATA: Question definitions
+       Each question has a stable ID, prompt, helper text, and
+       optional style assignment. The same IDs are used to place
+       answers into the final writing guide.
+    --------------------------------------------------------- */
+
+    const coreQuestions = [
+      {
+        id: "meet",
+        title: "How did you first meet?",
+        help: "What do you remember about that first encounter? Where were you, what was happening, and what stands out now?"
+      },
+      {
+        id: "first_impression",
+        title: "What was your first impression of your partner?",
+        help: "What did you initially notice? Has that impression changed over time?"
+      },
+      {
+        id: "realized",
+        title: "When did you realize this relationship was becoming important?",
+        help: "It does not have to be one dramatic moment. It may have happened gradually."
+      },
+      {
+        id: "love",
+        title: "What do you love most about your partner?",
+        help: "Try to go beyond general qualities. What do they actually do that makes you feel that way?"
+      },
+      {
+        id: "feel_loved",
+        title: "What is something your partner does that makes you feel loved?",
+        help: "Think about a specific, everyday action or gesture."
+      },
+      {
+        id: "memory",
+        title: "What is one memory of the two of you that you never want to forget?",
+        help: "It can be funny, ordinary, difficult, romantic, or meaningful only to the two of you."
+      },
+      {
+        id: "challenge",
+        title: "What is something you have been through together that shaped your relationship?",
+        help: "This does not need to be a major hardship. It could be a move, a decision, or learning how to understand one another."
+      },
+      {
+        id: "proud",
+        title: "What is something about your relationship that makes you proud?",
+        help: "What have you built, learned, experienced, or created together?"
+      },
+      {
+        id: "learned",
+        title: "What has loving this person taught you?",
+        help: "Has it changed how you see yourself, relationships, commitment, or life?"
+      },
+      {
+        id: "always_know",
+        title: "What do you want your partner to always know about how you feel?",
+        help: "If there is one thing you want them to remember, what would it be?"
+      },
+      {
+        id: "promises",
+        title: "What do you want to promise your partner?",
+        help: "List real things you want them to be able to count on. Do not worry about making them sound like vows."
+      },
+      {
+        id: "future",
+        title: "When you imagine your life together, what are you most looking forward to?",
+        help: "Think about big plans as well as ordinary everyday life."
+      },
+      {
+        id: "include",
+        title: "Is there anything you definitely want to include?",
+        help: "A person, place, memory, joke, quotation, value, tradition, or particular idea."
+      },
+      {
+        id: "avoid",
+        title: "Is there anything you definitely do not want your vows to sound like or include?",
+        help: "For example, too formal, too poetic, too long, religious language, private stories, or anything else."
+      }
+    ];
+
+    const styleQuestions = {
+      heartfelt: [
+        { id: "heartfelt_safe", title: "When do you feel most understood or accepted by your partner?", help: "Describe what happens and why it matters to you." },
+        { id: "heartfelt_needed", title: "What did this relationship give you that you did not know you needed?", help: "This might be a feeling, a kind of support, or a new way of seeing yourself." },
+        { id: "heartfelt_never_doubt", title: "What do you hope your partner never doubts about your love?", help: "What would you want them to remember, even on a difficult day?" },
+        { id: "heartfelt_change", title: "How has your life changed since this person became part of it?", help: "Think about specific changes rather than trying to make a grand statement." }
+      ],
+      story: [
+        { id: "story_life", title: "What was happening in each of your lives when you met?", help: "Where were you in life, and what was important to you at the time?" },
+        { id: "story_early", title: "What early memory captures what the two of you were like together?", help: "Choose a moment that says something about your dynamic." },
+        { id: "story_turning", title: "Was there a turning point in your relationship?", help: "A moment when things became more serious, changed direction, or felt different." },
+        { id: "story_chapters", title: "If your relationship had three chapters or defining moments, what would they be?", help: "List the moments and briefly explain why each matters." }
+      ],
+      funny: [
+        { id: "funny_quirk", title: "What does your partner do that drives you slightly crazy, but you secretly love?", help: "A habit, quirk, ritual, or familiar disagreement." },
+        { id: "funny_memory", title: "What is your favourite ridiculous or embarrassing memory together?", help: "What happened, and why does it still make you laugh?" },
+        { id: "funny_joke", title: "What is an inside joke only the two of you really understand?", help: "You can explain the context so you remember what to refer to later." },
+        { id: "funny_promise", title: "What is a promise you could make that would make your partner laugh?", help: "Think of something specific to your relationship, not a generic wedding joke." },
+        { id: "funny_ridiculous", title: "What is something ridiculous about your relationship that you would not want to change?", help: "A shared habit, obsession, routine, or ongoing joke." }
+      ],
+      simple: [
+        { id: "simple_words", title: "If you had to describe what your partner means to you in three words, what would they be?", help: "Add a short explanation of why you chose each word." },
+        { id: "simple_ordinary", title: "What ordinary part of your life together do you love most?", help: "Think about a small, everyday moment." },
+        { id: "simple_three", title: "What are the three most important promises you want to make?", help: "Keep them concrete and meaningful to you." },
+        { id: "simple_one", title: "If you could say only one thing to your partner today, what would you want them to hear?", help: "Do not overthink it. Write the first honest answer that comes to mind." }
+      ],
+      poetic: [
+        { id: "poetic_feeling", title: "What does being with your partner feel like?", help: "You do not need to explain it logically. Write down images, comparisons, or feelings that come to mind." },
+        { id: "poetic_image", title: "Is there a place, season, object, song, or image that reminds you of your relationship?", help: "Explain the connection and what it represents to you." },
+        { id: "poetic_ordinary", title: "What ordinary moment with your partner feels unexpectedly beautiful?", help: "Describe the moment as if you were helping someone picture it." },
+        { id: "poetic_older", title: "When you imagine growing older together, what do you picture?", help: "Think about a scene, a place, or a small detail." }
+      ],
+      partnership: [
+        { id: "partner_you", title: "What kind of partner do you want to be?", help: "Think about the qualities and actions you want to bring to your marriage." },
+        { id: "partner_difficult", title: "What do you want your partner to be able to count on when life gets difficult?", help: "What will showing up for them look like in practice?" },
+        { id: "partner_protect", title: "What do you want to protect about your relationship as your lives change?", help: "A ritual, value, habit, or way of treating one another." },
+        { id: "partner_build", title: "What do you want to build together?", help: "This could be a home, family, shared projects, traditions, or a particular kind of life." },
+        { id: "partner_team", title: "What does being a good team mean to the two of you?", help: "How do you make decisions, handle disagreements, and support each other's independence?" }
+      ],
+      faith: [
+        { id: "faith_role", title: "What role does faith, spirituality, or tradition play in your relationship?", help: "Describe what is personally meaningful to you." },
+        { id: "faith_values", title: "Are there particular values from your faith or tradition that you want your marriage to reflect?", help: "For example, compassion, service, patience, commitment, or forgiveness." },
+        { id: "faith_text", title: "Are there prayers, readings, teachings, or traditions you want to honour?", help: "You can name them or describe the idea you want to include." },
+        { id: "faith_meaning", title: "What does marriage mean to you within your faith or tradition?", help: "Explain it in your own words." },
+        { id: "faith_avoid", title: "Are there any religious or traditional elements you specifically do not want included?", help: "This helps keep the guide aligned with your beliefs and preferences." }
+      ]
+    };
+
+    /* ---------------------------------------------------------
+       GUIDE DEFINITIONS
+       Each guide section refers to question IDs. This is the
+       mechanism that brings the user's own answers back into
+       their personalized workbook.
+    --------------------------------------------------------- */
+
+    const guideSections = [
+      {
+        title: "Begin with the two of you",
+        purpose: "Introduce the relationship and bring your partner into the story of how you arrived at this moment.",
+        questionIds: ["meet", "first_impression", "realized"],
+        prompts: [
+          "Choose one detail from the beginning of your relationship that you can still picture clearly.",
+          "Think about what you know now that you could not have known at the time.",
+          "You do not need to tell the entire story. One specific moment can be enough."
+        ],
+        starters: ["I still remember the first time...", "If someone had told me then...", "Looking back, I realize..."]
+      },
+      {
+        title: "Tell them what you love about them",
+        purpose: "Move from general compliments to the specific things your partner does and the way those things affect you.",
+        questionIds: ["love", "feel_loved", "heartfelt_safe", "heartfelt_needed", "heartfelt_never_doubt", "heartfelt_change"],
+        prompts: [
+          "Choose two qualities or actions from your answers.",
+          "Describe one example that shows the quality instead of only naming it.",
+          "Explain why this matters to you and what it makes possible in your relationship."
+        ],
+        starters: ["One of the things I admire most about you...", "I feel most like myself when...", "I love the way you..."]
+      },
+      {
+        title: "Include a memory that represents your relationship",
+        purpose: "Use a real moment to show something about the two of you. The meaning of the memory is often more important than the event itself.",
+        questionIds: ["memory", "story_early", "story_turning", "story_chapters", "funny_memory", "funny_joke", "funny_ridiculous", "poetic_ordinary", "poetic_image"],
+        prompts: [
+          "Choose one memory. Give the reader or listener just enough detail to picture it.",
+          "What happened? What did you notice? What do you remember feeling?",
+          "What does this memory reveal about your relationship?"
+        ],
+        starters: ["I'll always remember the time...", "One moment that captures us is...", "I think that memory says something about us because..."]
+      },
+      {
+        title: "Reflect on what you have built together",
+        purpose: "Describe what your experiences have taught you about being partners.",
+        questionIds: ["challenge", "proud", "learned", "partner_team", "partner_protect"],
+        prompts: [
+          "Choose an experience that changed or strengthened your relationship.",
+          "Think about what each of you contributed and what you learned.",
+          "Consider what you want to carry forward into marriage."
+        ],
+        starters: ["We've learned that...", "One thing I value about the life we've built...", "Being with you has taught me..."]
+      },
+      {
+        title: "Make your promises",
+        purpose: "Turn your intentions into specific commitments that sound realistic and personal.",
+        questionIds: ["promises", "partner_you", "partner_difficult", "partner_build", "simple_three", "funny_promise"],
+        prompts: [
+          "Choose three to five promises that matter most to you.",
+          "Make at least one promise about ordinary everyday life.",
+          "Make at least one promise about how you will treat each other when life is difficult.",
+          "Avoid promises that sound impressive but do not feel realistic or personal."
+        ],
+        starters: ["I promise to...", "You can count on me to...", "Even when things are difficult, I will..."]
+      },
+      {
+        title: "Look toward your future",
+        purpose: "Give your vows a sense of forward movement. You can be hopeful without pretending to know exactly what will happen.",
+        questionIds: ["future", "partner_build", "poetic_older", "poetic_feeling"],
+        prompts: [
+          "Choose one thing you are excited to experience together.",
+          "Include an ordinary detail as well as, or instead of, a major life goal.",
+          "Think about the kind of relationship you hope to keep creating."
+        ],
+        starters: ["When I imagine our future...", "I look forward to...", "I don't know exactly what comes next, but..."]
+      },
+      {
+        title: "Find your ending",
+        purpose: "Finish with the central feeling or commitment you want your partner to remember.",
+        questionIds: ["always_know", "simple_one", "heartfelt_never_doubt", "include"],
+        prompts: [
+          "Look back at what you wrote in the earlier sections.",
+          "What is the one idea you most want to leave with your partner?",
+          "A closing does not need to be elaborate. A direct, honest sentence can be powerful."
+        ],
+        starters: ["More than anything, I want you to know...", "Today, I choose...", "I cannot wait to..."]
+      }
+    ];
+
+    /* ---------------------------------------------------------
+       STATE AND LOCAL STORAGE
+       Answers and style selections are stored only in this
+       browser. No network requests or AI services are used.
+    --------------------------------------------------------- */
+
+    const STORAGE_KEY = "guidedVowWorkbook_v1";
+    let selectedStyles = [];
+    let answers = {};
+
+    function saveState() {
+      const state = { selectedStyles, answers };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+
+    function loadState() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+        selectedStyles = Array.isArray(saved.selectedStyles) ? saved.selectedStyles : [];
+        answers = saved.answers && typeof saved.answers === "object" ? saved.answers : {};
+      } catch (error) {
+        selectedStyles = [];
+        answers = {};
+      }
+    }
+
+    function getSelectedStyles() {
+      return Array.from(document.querySelectorAll('input[name="style"]:checked'))
+        .map(input => input.value);
+    }
+
+    function syncStyleCards() {
+      document.querySelectorAll(".style-card").forEach(card => {
+        const checkbox = card.querySelector('input[name="style"]');
+        card.classList.toggle("selected", checkbox.checked);
+      });
+    }
+
+    function questionIsRelevant(question) {
+      return Object.keys(styleQuestions).some(style =>
+        selectedStyles.includes(style) &&
+        styleQuestions[style].some(item => item.id === question.id)
+      );
+    }
+
+    function getAllQuestions() {
+      const combined = [...coreQuestions];
+      selectedStyles.forEach(style => {
+        if (styleQuestions[style]) combined.push(...styleQuestions[style]);
+      });
+      return combined;
+    }
+
+    function renderQuestions() {
+      const container = document.getElementById("question-list");
+      container.innerHTML = "";
+
+      const allQuestions = getAllQuestions();
+
+      allQuestions.forEach((question, index) => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "question-card";
+
+        const label = document.createElement("label");
+        label.htmlFor = `answer-${question.id}`;
+        label.textContent = `${index + 1}. ${question.title}`;
+
+        const help = document.createElement("p");
+        help.className = "question-help";
+        help.textContent = question.help;
+
+        const textarea = document.createElement("textarea");
+        textarea.id = `answer-${question.id}`;
+        textarea.placeholder = "Write your thoughts here...";
+        textarea.value = answers[question.id] || "";
+        textarea.addEventListener("input", () => {
+          answers[question.id] = textarea.value;
+          saveState();
+        });
+
+        wrapper.append(label, help, textarea);
+        container.appendChild(wrapper);
+      });
+    }
+
+    function showScreen(screenName) {
+      document.querySelectorAll(".screen").forEach(screen => screen.classList.remove("active"));
+      document.getElementById(`screen-${screenName}`).classList.add("active");
+
+      const stepNumber = screenName === "styles" ? 1 : screenName === "questions" ? 2 : 3;
+      const percentage = screenName === "styles" ? 0 : screenName === "questions" ? 50 : 100;
+
+      document.getElementById("progress-label").textContent = `Step ${stepNumber} of 3`;
+      document.getElementById("progress-percent").textContent = `${percentage}% complete`;
+      document.getElementById("progress-fill").style.width = `${percentage}%`;
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function answerText(questionId) {
+      const value = (answers[questionId] || "").trim();
+      return value || "You haven't added an answer to this question. You can return to your answers at any time.";
+    }
+
+    function createAnswerBlock(questionId) {
+      const question = [...coreQuestions, ...Object.values(styleQuestions).flat()]
+        .find(item => item.id === questionId);
+
+      if (!question) return "";
+
+      const value = (answers[questionId] || "").trim();
+      const safeValue = escapeHtml(value || "No answer added yet. You can leave this section blank or return to the questions.");
+
+      return `
+        <div class="answer-label"><strong>${escapeHtml(question.title)}</strong></div>
+        <div class="your-answer ${value ? "" : "empty"}">${safeValue}</div>
+      `;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function renderGuide() {
+      const intro = document.getElementById("guide-intro");
+      const styleNames = {
+        heartfelt: "Heartfelt",
+        story: "Our Story",
+        funny: "Funny & Playful",
+        simple: "Simple & Sincere",
+        poetic: "Romantic & Poetic",
+        partnership: "Partnership & Future",
+        faith: "Faith & Tradition",
+        template: "Structured Template"
+      };
+
+      const chosenNames = selectedStyles.map(style => styleNames[style]);
+      intro.innerHTML = `
+        <strong>Your selected direction:</strong>
+        <p>${chosenNames.map(escapeHtml).join(" + ")}</p>
+        <p>This combination shapes the questions and exercises below. It does not determine what your vows should say.</p>
+      `;
+
+      const guide = document.getElementById("guide-content");
+      guide.innerHTML = "";
+
+      guideSections.forEach((section, index) => {
+        // Only include a section when at least one linked answer has
+        // been answered, or when it is a core section useful to everyone.
+        const relevantAnswers = section.questionIds.filter(id => {
+          const isCore = coreQuestions.some(question => question.id === id);
+          const isSelectedStyleQuestion = getAllQuestions().some(question => question.id === id);
+          return isCore || isSelectedStyleQuestion;
+        });
+
+        if (relevantAnswers.length === 0) return;
+
+        const answerBlocks = relevantAnswers
+          .map(id => createAnswerBlock(id))
+          .filter(Boolean)
+          .join("");
+
+        const prompts = section.prompts.map(prompt => `<li>${escapeHtml(prompt)}</li>`).join("");
+        const starters = section.starters.map(starter =>
+          `<span class="starter">${escapeHtml(starter)}</span>`
+        ).join("");
+
+        const sectionElement = document.createElement("section");
+        sectionElement.className = "guide-section";
+        sectionElement.innerHTML = `
+          <div class="section-number">Writing section ${index + 1}</div>
+          <h3>${escapeHtml(section.title)}</h3>
+          <p>${escapeHtml(section.purpose)}</p>
+          <h4>Your answers to draw from</h4>
+          ${answerBlocks || '<p class="your-answer empty">No related answers yet. You can still use the prompts below.</p>'}
+          <h4>Think about</h4>
+          <ul class="prompt-list">${prompts}</ul>
+          <h4>Possible sentence starters</h4>
+          <div class="starter-list">${starters}</div>
+          <h4>Your writing space</h4>
+          <div class="writing-space">Use this space to draft this part of your vows. Your writing here is not sent anywhere.</div>
+        `;
+        guide.appendChild(sectionElement);
+      });
+
+      // Add a small reminder for style-specific material that may not
+      // have been mapped to a general writing section.
+      const styleReminders = document.createElement("section");
+      styleReminders.className = "guide-section";
+      styleReminders.innerHTML = `
+        <div class="section-number">A final reminder</div>
+        <h3>Keep your own voice</h3>
+        <p>Read your draft aloud. Replace any phrase you would not normally say. You do not need to include every memory or answer in your vows.</p>
+        <ul class="prompt-list">
+          <li>Does this sound like something you would actually say to your partner?</li>
+          <li>Have you included details that only you could have written?</li>
+          <li>Are your promises specific and realistic?</li>
+          <li>Is there anything private that you would rather keep between the two of you?</li>
+        </ul>
+      `;
+      guide.appendChild(styleReminders);
+    }
+
+    /* ---------------------------------------------------------
+       EVENT HANDLERS
+    --------------------------------------------------------- */
+
+    document.querySelectorAll('input[name="style"]').forEach(input => {
+      input.addEventListener("change", () => {
+        syncStyleCards();
+        selectedStyles = getSelectedStyles();
+        saveState();
+      });
+    });
+
+    document.getElementById("to-questions").addEventListener("click", () => {
+      selectedStyles = getSelectedStyles();
+
+      if (selectedStyles.length === 0) {
+        alert("Please choose at least one direction, or select Give Me a Template.");
+        return;
+      }
+
+      saveState();
+      renderQuestions();
+      showScreen("questions");
+    });
+
+    document.getElementById("back-to-styles").addEventListener("click", () => {
+      selectedStyles = getSelectedStyles();
+      saveState();
+      showScreen("styles");
+    });
+
+    document.getElementById("make-guide").addEventListener("click", () => {
+      // Collect the latest values from all visible textareas before
+      // building the personalized guide.
+      getAllQuestions().forEach(question => {
+        const field = document.getElementById(`answer-${question.id}`);
+        if (field) answers[question.id] = field.value;
+      });
+
+      saveState();
+      renderGuide();
+      showScreen("guide");
+    });
+
+    document.getElementById("edit-answers").addEventListener("click", () => {
+      renderQuestions();
+      showScreen("questions");
+    });
+
+    document.getElementById("print-guide").addEventListener("click", () => {
+      window.print();
+    });
+
+    document.getElementById("start-over").addEventListener("click", () => {
+      const confirmed = confirm("Start over and clear all saved answers on this device?");
+      if (!confirmed) return;
+
+      selectedStyles = [];
+      answers = {};
+      localStorage.removeItem(STORAGE_KEY);
+
+      document.querySelectorAll('input[name="style"]').forEach(input => input.checked = false);
+      syncStyleCards();
+      showScreen("styles");
+    });
+
+    /* ---------------------------------------------------------
+       INITIALIZATION
+       Restore any previous progress and reflect it in the UI.
+    --------------------------------------------------------- */
+
+    loadState();
+
+    document.querySelectorAll('input[name="style"]').forEach(input => {
+      input.checked = selectedStyles.includes(input.value);
+    });
+
+    syncStyleCards();
+  </script>
+</body>
+</html>
