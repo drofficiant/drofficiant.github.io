@@ -1,39 +1,38 @@
-
 ---
 layout: page
-title: Online Free Wedding Vow Writing Workshop
-description: Write personal wedding vows with this free interactive workshop. Explore vow structures, answer guided questions and create your own wedding vows.
+title: Vow Workshop
+description: Learn how to write personal wedding vows with this free interactive wedding vow writing workshop. Explore vow structures, guided questions and practical writing exercises.
 permalink: /vow-workshop/
 ---
 
-Writing your wedding vows can feel like a daunting task. How do you put your relationship into words? Where do you begin? And how do you make sure your vows feel personal, meaningful and genuinely yours?
+Writing your wedding vows can feel overwhelming, especially when you are not sure where to begin. This free workshop helps you find a structure that feels right for your relationship, reflect on what you want to say and develop your own words.
 
-This free **Wedding Vow Writing Workshop** is designed to help you work through those questions, one step at a time.
+<div style="text-align: center; margin: 2rem 0 2.5rem;">
+  <a href="{{ '/vow-workshop/wedding-vow-pipeline.html' | relative_url }}"
+     style="display: inline-block; background-color: #8b5e5a; color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.05rem;">
+    Start the Free Vow Writing Workshop →
+  </a>
+</div>
 
-Rather than giving you pre-written vows to copy, the workshop guides you through a series of questions and exercises to help you discover what you want to say and how you want to say it.
+## How the Workshop Works
 
-## How Does the Vow Writing Workshop Work?
+The workshop takes you through a series of steps to help you develop your own wedding vows. You can choose the approach that best suits your writing style and the kind of promises you want to make.
 
-The interactive workshop takes you through a few simple steps:
+- **Choose your length:** Work towards vows of approximately 2, 4 or 7 minutes.
+- **Explore different structures:** Choose from ten vow-writing templates, each offering a different way to organise your thoughts.
+- **Select your level of guidance:** Follow a set structure or explore alternative sentence beginnings.
+- **Reflect on your relationship:** Answer questions designed to help you identify the memories, qualities and commitments you want to include.
+- **Develop your own vows:** Use your answers and the suggested structure as a guide while writing in your own words.
 
-- **Choose your length:** Decide whether you want your vows to be approximately 2, 4 or 7 minutes long.
-- **Explore different vow structures:** Choose from ten different approaches to writing your vows, or start with a completely open structure.
-- **Find your writing style:** Follow a more guided, preset structure or choose from alternative sentence beginnings.
-- **Reflect on your relationship:** Answer questions designed to help you think about your memories, your partner, your promises and your future together.
-- **Develop your own vows:** Use your answers to create a personalised writing guide that helps you put your thoughts into words.
+## Your Words, Your Promises
 
-## A Wedding Vow Writing Tool That Keeps Your Words Personal
+There is no single correct way to write wedding vows. Some people prefer a clear structure, while others want something more spontaneous or personal. The workshop is designed to support different approaches without prescribing what you should say.
 
-There is no single right way to write wedding vows. Some people prefer a clear structure to follow, while others want more freedom to find their own words.
+It will not write your vows for you. Instead, it provides questions, structures and writing prompts to help you discover what you want to express.
 
-This workshop offers both approaches. You can follow a suggested format, use sentence beginnings for inspiration, or work through the questions without a preset template.
-
-The goal is not to write perfect vows in one sitting. It is to help you reflect on your relationship and create something that feels true to you.
-
-**The workshop supports your writing. It does not write your vows for you.**
-
-## Start Writing Your Wedding Vows
-
-Ready to get started? Set aside a little time, think about what makes your relationship yours, and let the questions guide you.
-
-[Start the Free Wedding Vow Writing Workshop →]({{ '/vow-workshop/wedding-vow-pipeline.html' | relative_url }})
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="{{ '/vow-workshop/wedding-vow-pipeline.html' | relative_url }}"
+     style="display: inline-block; background-color: #8b5e5a; color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.05rem;">
+    Start Writing Your Wedding Vows →
+  </a>
+</div>
