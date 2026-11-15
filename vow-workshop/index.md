@@ -11,16 +11,11 @@ Writing your vows does not have to mean finding the perfect words immediately. S
 
 This workshop will guide you through questions and exercises to help you develop your own vows. The aim is to support your writing, not to write the vows for you.
 
-## Start with your ideas
+## Write Your Wedding Vows
 
-Think about what matters most to you, what you appreciate about your partner and what you want to express during the ceremony.
+Not sure where to start? Use our guided vow-writing
+workshop to discover what you want to say, explore
+your memories, and find the words to write your own vows.
 
-## Choose your style
+[Start Writing Your Vows →](vow-writing-pipeline.html)
 
-Explore different approaches to vows, from short and simple promises to personal stories or more traditional structures.
-
-## Develop your vows
-
-Use prompts and writing exercises to organize your thoughts and create a draft in your own words.
-
-The interactive vow-writing workshop will be developed here.
